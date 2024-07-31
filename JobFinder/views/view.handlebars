@@ -1,0 +1,17 @@
+<div id="job-view-container" class="container">
+    <a class="back-link main-color" href='/'>Voltar</a>
+    <div class="row text-container">
+        <div id="img-container" class="col-md-12 view">
+            <img src="/img/company.jpg" alt="Company">
+        </div>
+        <div class="col-md-12">
+            <h1 class="main-color">{{job.dataValues.title}}</h1>
+            <p class="bold">Quem eles estão buscando: <span class="job-desc lighter">{{job.dataValues.description}}</span></p>
+            <p class="bold"><span>Salário informado: </span> <span class="salary lighter"> R$ {{job.dataValues.salary}}</span></p>
+            <p class="bold"><span>Local: </span><span class="company lighter">{{job.dataValues.company}}</span></p>
+            <p class="bold">
+                <span>Contato:</span> <a class="mail ligher" href="mail:to{{job.dataValues.email}}">{{job.dataValues.email}}</a>
+            </p>
+        </div>
+    </div>
+</div>
