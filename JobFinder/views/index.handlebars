@@ -28,8 +28,8 @@
                             <p>R$ {{dataValues.salary}}</p>
                             <span class="new-job-label">Nova</span>
                             <a class="btn btn-primary ver-vaga" href="/jobs/view/{{dataValues.id}}">Ver vaga</a>
-                            <form action="/jobs/delete/{{dataValues.id}}?_method=DELETE" method="POST" class="delete-form">
-                                <button type='button' class="delete btn btn-danger" >Deletar</button>
+                            <form action="/jobs/delete/{{dataValues.id}}?_method=DELETE" method="POST" class="delete-form" data-id="{{dataValues.id}}">
+                                <button type='submit' class="delete btn btn-danger" >Deletar</button>
                             </form>
                         </li>
                     {{/each}}

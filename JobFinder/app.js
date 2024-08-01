@@ -11,12 +11,12 @@ const methodOverride = require('method-override');
 
 const PORT = 3000;
 
-app.listen(PORT, function(){
-    console.log(`O express está rodando na porta ${PORT}`);
-});
 
 //body-parser
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Use method-override middleware
+app.use(methodOverride('_method'));
 
 //handlebars
 
@@ -76,5 +76,6 @@ app.get('/', (req, res)=>{
 //jobs routes
 app.use('/jobs', require('./routes/jobs'));
 
-// Use method-override middleware
-app.use(methodOverride('_method'));
+app.listen(PORT, function(){
+    console.log(`O express está rodando na porta ${PORT}`);
+});

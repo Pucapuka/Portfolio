@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const deleteButtons = document.querySelectorAll('.delete');
+    const deleteForms = document.querySelectorAll('.delete-form');
 
-    deleteButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const jobId = event.target.closest('li').dataset.id;
+    deleteForms.forEach(form => {
+        button.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            const jobId = form.dataset.id;
 
             if (confirm('Você tem certeza que deseja deletar esta vaga?')) {
                 fetch(`/jobs/delete/${jobId}`, {
@@ -11,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(response => {
                     if (response.ok) {
-                        event.target.closest('li').remove();
+                        form.closest('li').remove();
                     } else {
                         alert('Erro ao deletar a vaga');
                     }

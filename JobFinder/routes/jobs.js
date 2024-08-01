@@ -46,7 +46,7 @@ router.delete('/delete/:id', (req, res) => {
         }
     })
     .then(() => {
-        res.sendStatus(200);
+        res.redirect('/');
     })
     .catch(err => {
         console.error(err);
